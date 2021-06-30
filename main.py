@@ -1,10 +1,12 @@
 import discord
+import os
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 
 intent = discord.Intents.all()
 client = commands.Bot(command_prefix = '!', intent  = intent)
 
+bot_token = TOKEN = os.getenv("DISCORD_TOKEN")
 
 @client.event
 async def on_ready():
@@ -53,4 +55,4 @@ async def create_role(ctx):
 
 
 
-client.run('ODU4NjQwMDY5NzQ1NDQyODM3.YNhE4Q.yTTzEwEUbWY_-cQzA1eVKNGiu-k')
+client.run(bot_token)
